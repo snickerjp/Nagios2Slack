@@ -16,3 +16,17 @@ Nagios notifications for Slack, with formatted messages :
 ( see examples in slack_commands.cfg, modify any paths as required)
 
 * Set up a new contact to use the new host and service notification commands.
+
+
+## Setup example
+
+```sh
+cd /usr/lib64/nagios/plugins/
+sudo git clone -b include https://github.com/snickerjp/Nagios2Slack.git
+cd /usr/lib64/nagios/plugins/Nagios2Slack
+sudo cp slack_commands.cfg /etc/nagios/conf.d/
+
+# edit config
+cp slack_notify_config.sh.template slack_notify_config.sh
+vi slack_notify_config.sh # SLACK_URL and FOOTER_ICON
+```
